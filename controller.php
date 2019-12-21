@@ -158,6 +158,17 @@ function get_questions($user){
     $_SESSION["questions"] = getAllUsersQuestion($user);
 }
 
+function get_all_questions(){
+    global $_SESSION;
+    $_SESSION["all_questions"] = getAllUsersQuestion();
+}
+
+function display_one_question($post){
+    global $_SESSION;
+    $_SESSION["selected_question"] = getAQuestion($post["id"]);
+    header("Location: view/view_question.php");
+}
+
 function display_questions(){
     header("Location: view/all_questions.php");
 }

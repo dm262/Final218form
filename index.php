@@ -48,6 +48,19 @@ else {
             delete_question($_POST, $_SESSION);
             display_questions();
             break;
+
+            case "view_question":
+                display_one_question($_POST);
+                break;
+        case "display_all_questions":{
+            get_all_questions();
+            display_all_questions();
+            break;
+        }
+        case "logout":
+            logout();
+            display_login();
+            break;
     }
 
 
